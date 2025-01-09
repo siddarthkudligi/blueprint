@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export default function TextToSpeech() {
     const [text, setText] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +15,7 @@ export default function TextToSpeech() {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8000/api/v1/text-to-speech', {
+            const response = await fetch(`${API_URL}/api/v1/text-to-speech`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,6 +35,7 @@ export default function TextToSpeech() {
 
         } catch (err) {
             setError(err instanceof Error ? err.message : 'An error occurred');
+            console.error('Error:', err);
         } finally {
             setIsLoading(false);
         }
