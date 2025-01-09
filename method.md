@@ -10,6 +10,7 @@ Blueprint is an educational technology (EdTech) SaaS platform designed to provid
 - Frontend: React component with real-time conversion
 - Backend: FastAPI endpoint using Google's TTS service
 - Seamless audio playback in the browser
+- Deployed frontend to Vercel
 
 ### Technical Stack
 
@@ -19,6 +20,7 @@ Blueprint is an educational technology (EdTech) SaaS platform designed to provid
 - Tailwind CSS for styling
 - Modern ES6+ JavaScript
 - Component-based architecture
+- Vercel for deployment
 
 #### Backend
 - FastAPI for API endpoints
@@ -32,6 +34,7 @@ Blueprint is an educational technology (EdTech) SaaS platform designed to provid
 - npm for frontend package management
 - pip for Python dependencies
 - Development servers on ports 3000/3001 (frontend) and 8000 (backend)
+- Vercel CLI for deployment management
 
 ### Project Structure
 ```
@@ -40,11 +43,29 @@ blueprint/
 │   ├── src/
 │   │   ├── app/       # Next.js app directory
 │   │   └── components/# React components
-│   └── public/        # Static assets
+│   ├── next.config.js # Next.js configuration
+│   └── .env.local.example # Environment template
 ├── backend/           # Python backend
 │   ├── routes/       # API endpoints
 │   └── models/       # Data models
 ```
+
+## Deployment Strategy
+
+### Frontend (Implemented)
+- Vercel deployment
+  - Automatic deployments from GitHub
+  - Environment variable configuration
+  - Preview deployments for pull requests
+- Static site generation
+- CDN distribution
+- Environment management
+
+### Backend (Planned)
+- Containerized deployment
+- Load balancing
+- Database scaling
+- Monitoring and logging
 
 ## Next Steps
 1. User Authentication
@@ -63,15 +84,17 @@ blueprint/
    - Assignment submission
 
 4. Infrastructure
+   - Backend deployment
    - CI/CD pipeline
    - Automated testing
-   - Production deployment
+   - Production monitoring
 
 ## Development Methodology
 1. Version Control
    - Git-based workflow
    - Feature branches
    - Descriptive commit messages
+   - Automated Vercel deployments
 
 2. Code Quality
    - TypeScript for type safety
@@ -91,14 +114,14 @@ blueprint/
    - End-to-end testing
    - Performance testing
 
-## Deployment Strategy
+## Current Deployment Status
 1. Frontend
-   - Vercel deployment
-   - Static site generation
-   - CDN distribution
+   - Deployed at: https://blueprint-eight-orpin.vercel.app/
+   - Automatic deployments from main branch
+   - Environment variables configured in Vercel
+   - Preview deployments enabled
 
 2. Backend
-   - Containerized deployment
-   - Load balancing
-   - Database scaling
-   - Monitoring and logging
+   - Currently running locally
+   - Deployment pending
+   - API documentation available at /docs endpoint
